@@ -116,6 +116,8 @@ case class HBaseRelation(
 
   def hbaseConf = wrappedConf.value
 
+  val serializedToken = SHCCredentialsManager.manager.getTokenForCluster(hbaseConf)
+
   def createTable() {
     if (catalog.numReg > 3) {
       val cfs = catalog.getColumnFamilies

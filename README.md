@@ -32,6 +32,12 @@ Creatable DataSource  The libary support both read/write from/to HBase.
 
     mvn package -DskipTests
 
+For Spark 1.6.3 release, use
+
+```
+mvn clean package -P scala-2.10 -DskipTests
+```
+
 ### Running Tests and Examples
 Run test
 
