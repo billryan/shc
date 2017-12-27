@@ -288,7 +288,7 @@ object HBaseTableCatalog {
         fc, column.get(`type`), sAvro, len)
       schemaMap.+= ((name, f))
     }
-    val numReg = parameters.get(newTable).map(x => x.toInt).getOrElse(0)
+    val numReg = parameters.get(newTable).map(x => x.toInt).getOrElse(5)
     val rKey = RowKey(map.get(rowKey).get.asInstanceOf[String])
 
     HBaseTableCatalog(nSpace, tName, rKey, SchemaMap(schemaMap), tCoder, coderSet, numReg)
